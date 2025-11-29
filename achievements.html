@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Student Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen p-4 md:p-8 flex justify-center">
+
+    <main class="w-full max-w-4xl space-y-8">
+        
+        <!-- Header & Navigation -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">Certifications & Achievements</h1>
+                <p class="text-slate-500 text-sm mt-1">Professional milestones, course completions, and competition wins.</p>
+            </div>
+            <div>
+                <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Home
+                </a>
+            </div>
+        </header>
+
+        <!-- Certifications Section -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 mb-2 px-1">
+                <span class="p-2 bg-amber-100 text-amber-600 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                </span>
+                <h2 class="text-xl font-bold text-slate-800">Professional Certifications</h2>
+            </div>
+            
+            <!-- Container for Certificates -->
+            <div id="cert-container" class="grid gap-4">
+                <!-- Content populated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!--      CONFIGURATION SECTION - EDIT HERE     -->
+    <!-- ========================================== -->
+    <script>
+        // ---------------------------------------------------------
+        // 1. CERTIFICATIONS DATA
+        // Add your courses from Coursera, Udemy, etc. here.
+        // ---------------------------------------------------------
+        const certifications_data = [
+            { 
+                title: "Data Science Using Python INI Certificate",
+                issuer: "INI (Aligarh Muslim University)",
+                date: "Oct 2025",
+                desc: "Completed rigorous training in Python, Data Preprocessing, Machine Learning and Deep Learning in Python.",
+                link: "certificate.pdf" // Add your certificate URL here
+            },
+            { 
+                title: "Python Programming",
+                issuer: "Universal Informatics",
+                date: "May 2025",
+                desc: "Mastered Core and Advanced Python concepts with basics of Django",
+                link: "Universal.pdf"
+            },
+            { 
+                title: "Clinical Psychology Intership",
+                issuer: "Fortis Healthcare Limited",
+                date: "July 2024",
+                desc: "Gained insights about clinical psychology and its various aspects",
+                link: "fortis.pdf"
+            },
+            { 
+                title: "Google Cloud Study Jams",
+                issuer: "Google Developer Students Club - IIPS",
+                date: "Jan 2024",
+                desc: "Learned basics of cloud computing and hands on experience of Google Cloud",
+                link: "cloud.pdf"
+            }
+        ];
+
+        // ==========================================
+        //      RENDERING LOGIC (DO NOT EDIT)
+        // ==========================================
+        function renderCards(data, containerId) {
+            const container = document.getElementById(containerId);
+            let html = '';
+            
+            data.forEach(item => {
+                html += `
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="space-y-1">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <h3 class="text-lg font-bold text-slate-900">${item.title}</h3>
+                            <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">${item.date}</span>
+                        </div>
+                        <p class="text-sm font-semibold text-blue-600">${item.issuer}</p>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-2xl">${item.desc}</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="${item.link}" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-slate-300 shadow-sm text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                            View Credential
+                            <svg class="ml-2 -mr-1 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards(certifications_data, 'cert-container');
+        });
+    </script>
+</body>
+</html>

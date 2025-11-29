@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments | Student Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; }
+        .custom-scrollbar::-webkit-scrollbar { height: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .content-visible {
+            max-height: 2000px;
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+        }
+        .content-hidden {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+        }
+        .chevron-rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen p-4 md:p-8 flex justify-center">
+
+    <main class="w-full max-w-5xl space-y-8">
+        
+        <!-- Header & Navigation -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">Video Assignments</h1>
+                <p class="text-slate-500 text-sm mt-1">Repository of all video submissions for 5th Semester</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="relative">
+                    <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search questions..." class="pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64">
+                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Home
+                </a>
+            </div>
+        </header>
+
+        <!-- Internal Assessment 1 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-6 border-b border-slate-100 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleSection('internal1-content', 'internal1-chevron')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg id="internal1-chevron" class="w-5 h-5 text-slate-400 transition-transform duration-300 chevron-rotate" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800">Internal Assessment 1</h2>
+                            <p class="text-sm text-slate-500 mt-1">Comprehensive video solutions for 20 individual problem statements.</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">20 Videos</span>
+                </div>
+            </div>
+            
+            <div id="internal1-content" class="overflow-x-auto custom-scrollbar content-visible">
+                <table class="w-full text-sm text-left text-slate-600">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 w-24">Q. No</th>
+                            <th class="px-6 py-3">Topic / Description</th>
+                            <th class="px-6 py-3 w-32">Status</th>
+                            <th class="px-6 py-3 w-32 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="internal1-body" class="divide-y divide-slate-100 search-target">
+                        <!-- Content populated by JS at bottom -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Internal Assessment 2 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-6 border-b border-slate-100 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleSection('internal2-content', 'internal2-chevron')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg id="internal2-chevron" class="w-5 h-5 text-slate-400 transition-transform duration-300 chevron-rotate" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800">Internal Assessment 2</h2>
+                            <p class="text-sm text-slate-500 mt-1">Advanced concepts divided into 4 major sections.</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">4 Sections</span>
+                </div>
+            </div>
+            
+            <div id="internal2-content" class="overflow-x-auto custom-scrollbar content-visible">
+                <table class="w-full text-sm text-left text-slate-600">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 w-24">Section</th>
+                            <th class="px-6 py-3">Description</th>
+                            <th class="px-6 py-3 w-32">Status</th>
+                            <th class="px-6 py-3 w-32 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="internal2-body" class="divide-y divide-slate-100 search-target">
+                         <!-- Content populated by JS at bottom -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Practical Assignment -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
+            <div class="p-6 border-b border-slate-100 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleSection('practical-content', 'practical-chevron')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg id="practical-chevron" class="w-5 h-5 text-slate-400 transition-transform duration-300 chevron-rotate" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800">Practical Assignment</h2>
+                            <p class="text-sm text-slate-500 mt-1">Solutions to 10 core practical problems.</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full">10 Videos</span>
+                </div>
+            </div>
+            
+            <div id="practical-content" class="overflow-x-auto custom-scrollbar content-visible">
+                <table class="w-full text-sm text-left text-slate-600">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 w-24">Q. No</th>
+                            <th class="px-6 py-3">Problem Statement</th>
+                            <th class="px-6 py-3 w-32">Status</th>
+                            <th class="px-6 py-3 w-32 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="practical-body" class="divide-y divide-slate-100 search-target">
+                        <!-- Content populated by JS at bottom -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!--      CONFIGURATION SECTION - EDIT HERE     -->
+    <!-- ========================================== -->
+    <script>
+        // ---------------------------------------------------------
+        // 1. INTERNAL ASSESSMENT 1 DATA (20 Questions)
+        // Edit the 'topic' and 'link' for each question below.
+        // ---------------------------------------------------------
+        const internal1_data = [
+            { q: "Q1",  topic: "Statistical Measures of Dispersion",      link: "https://youtu.be/HTvbfbFduLA?si=eykv_dMGlVxBm1j5" },
+            { q: "Q2",  topic: "Statistical Measures and Data Visualization",   link: "https://youtu.be/9Ho9uvJfC_8?si=QEMcgbnhNfF-HjVX" },
+            { q: "Q3",  topic: "Median for Continous Data",         link: "https://youtu.be/SwXIcpD-VWc?si=TmCY0_B_MrwLoI6R" },
+            { q: "Q4",  topic: "Statistical Measures and Data Visualization",    link: "https://youtu.be/qp_AVn4mF_k?si=AA-AhgfKZCKvhJ1r" },
+            { q: "Q5",  topic: "Probability Distributions",                  link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q6",  topic: "Similarity Measures",                         link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q7",  topic: "Median Approximation Methods",                   link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q8",  topic: "Similarity Measures",                   link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q9",  topic: "Data Related Issues",                 link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q10", topic: "Handling Missing Data",                        link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q11", topic: "Data Smoothing",                             link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q12", topic: "Data Integration",                    link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q13", topic: "Normalization",              link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q14", topic: "Normalization",                  link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q15", topic: "Normalization",                         link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q16", topic: "Normalization",         link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q17", topic: "Partitioning",         link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q18", topic: "Attribute Selection Techniques",                       link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q19", topic: "Collaboration Analysis",                        link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" }
+    ];
+        // ---------------------------------------------------------
+        // 2. INTERNAL ASSESSMENT 2 DATA (4 Sections)
+        // ---------------------------------------------------------
+        const internal2_data = [
+            { q: "Sec A", topic: "Data Cleaning",   link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Sec B", topic: "Machine Learning Concepts",          link: "https://youtu.be/zjNPoGb--cg?si=sYx2kfzxroT8VBgu" },
+            { q: "Sec C", topic: "Deep Learning",                link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Sec D", topic: "Python Data Structures", link: "https://youtu.be/-U_oKob1VR4?si=R561vIIUzRuF3AzI" }
+        ];
+
+        // ---------------------------------------------------------
+        // 3. PRACTICAL ASSIGNMENT DATA (10 Questions)
+        // ---------------------------------------------------------
+        const practical_data = [
+            { q: "Q1",  topic: "Supervised V.S Unsupervised Learning",      link: "https://youtu.be/bTIAiRlBhNM?si=DDQT43l5tQhS0h8J" },
+            { q: "Q2",  topic: "Hypothesis Space",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q3",  topic: "Training and Testing Data",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q4",  topic: "Evaluation Metrics",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q5",  topic: "Dimensionality Reduction",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q6",  topic: "Overfitting and Underfitting",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q7",  topic: "Logistic V.S Linear Regression and Gradient Descents",      link: "https://youtu.be/x1wRSDK8_8U?si=_YbVuxJOShaYulOk" },
+            { q: "Q8",  topic: "Implementing Logistic and Linear Regression in Python",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q9",  topic: "One-Hot Encoding",      link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" },
+            { q: "Q10", topic: "K-Nearest Neighbors",     link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=jW0NYuCj7z-sLwDo" }
+        ];
+
+        // ==========================================
+        //      RENDERING LOGIC (DO NOT EDIT)
+        // ==========================================
+        function renderTable(data, tableId) {
+            const tbody = document.getElementById(tableId);
+            let html = '';
+            data.forEach(item => {
+                html += `
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">${item.q}</td>
+                    <td class="px-6 py-4">${item.topic}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-green-50 text-green-700 text-xs font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Uploaded
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right whitespace-nowrap">
+                        <a href="${item.link}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium hover:underline flex items-center justify-end gap-1">
+                            Watch Video <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </td>
+                </tr>`;
+            });
+            tbody.innerHTML = html;
+        }
+
+        // Initialize Tables
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTable(internal1_data, 'internal1-body');
+            renderTable(internal2_data, 'internal2-body');
+            renderTable(practical_data, 'practical-body');
+        });
+
+        // Toggle Accordion
+        function toggleSection(contentId, chevronId) {
+            const content = document.getElementById(contentId);
+            const chevron = document.getElementById(chevronId);
+            if (content.classList.contains('content-visible')) {
+                content.classList.remove('content-visible');
+                content.classList.add('content-hidden');
+                chevron.classList.remove('chevron-rotate');
+            } else {
+                content.classList.remove('content-hidden');
+                content.classList.add('content-visible');
+                chevron.classList.add('chevron-rotate');
+            }
+        }
+
+        // Search Function
+        function filterTable() {
+            const filter = document.getElementById('searchInput').value.toUpperCase();
+            
+            // Expand all if searching
+            if (filter.length > 0) {
+                document.querySelectorAll('.overflow-x-auto').forEach(el => {
+                    el.classList.remove('content-hidden');
+                    el.classList.add('content-visible');
+                });
+                document.querySelectorAll('svg[id$="-chevron"]').forEach(el => {
+                    el.classList.add('chevron-rotate');
+                });
+            }
+
+            const tbodies = document.querySelectorAll('.search-target');
+            tbodies.forEach(tbody => {
+                const tr = tbody.getElementsByTagName('tr');
+                for (let i = 0; i < tr.length; i++) {
+                    const tdNum = tr[i].getElementsByTagName("td")[0];
+                    const tdDesc = tr[i].getElementsByTagName("td")[1];
+                    if (tdDesc || tdNum) {
+                        const txtDesc = tdDesc.textContent || tdDesc.innerText;
+                        const txtNum = tdNum.textContent || tdNum.innerText;
+                        if (txtDesc.toUpperCase().indexOf(filter) > -1 || txtNum.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }       
+                }
+            });
+        }
+    </script>
+</body>
+</html>

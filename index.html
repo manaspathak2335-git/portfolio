@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | Data Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Using Inter font for a clean, academic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        /* Hide the print button when actually printing/saving to PDF manually */
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Main Container -->
+    <main id="portfolio-content" class="w-full max-w-3xl bg-white shadow-xl rounded-2xl overflow-hidden border border-slate-200">
+        
+        <!-- Header / Banner Area -->
+        <div class="bg-slate-900 h-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-slate-900 opacity-90"></div>
+            <!-- Decorative code pattern background -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        </div>
+
+        <div class="px-8 pb-10">
+            <!-- Profile Section -->
+            <!-- Adjusted alignment: Changed md:items-end to md:items-center and added spacing to shift text down -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center -mt-12 mb-8">
+                <!-- Photo Area -->
+                <div class="relative flex-shrink-0">
+                    <img src="client.jpeg" 
+                         alt="Student Photo" 
+                         class="w-36 h-36 rounded-xl border-4 border-white shadow-md object-cover bg-slate-200">
+                    <div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-2 border-white rounded-full" title="Active Student"></div>
+                </div>
+                
+                <!-- Name, Title & Social Links -->
+                <!-- Added md:mt-12 to shift the name section downwards -->
+                <div class="mt-6 md:mt-12 md:ml-8 flex-1">
+                    <h1 class="text-3xl font-bold text-slate-900 leading-tight">Manas Pathak</h1>
+                    <p class="text-blue-600 font-medium text-lg">Integrated BCA-MCA student</p>
+                    <p class="text-blue-600 font-medium text-lg mb-3">Student at IIPS-DAVV</p>
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3">
+                        <button onclick="this.innerHTML = 'manaspathak11041@gmail.com'; this.className = 'text-sm font-medium text-slate-900';" class="text-slate-500 hover:text-red-500 transition-colors focus:outline-none" title="Click to show email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </button>
+                        <a href="https://github.com/manaspathak2335-git" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors" title="GitHub Profile">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manas-pathak-502a6936a/" target="_blank" class="text-slate-500 hover:text-blue-700 transition-colors" title="LinkedIn Profile">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons (No-Print) -->
+                <div class="no-print mt-4 md:mt-12 flex gap-3">
+                    <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-sm font-medium transition-colors text-slate-700 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                        </svg>
+                        Save as PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Academic Details Grid -->
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 mb-6">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Academic Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase">Enrollment Number</span>
+                        <span class="font-mono font-medium text-slate-700 text-lg">DX2301156</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase">Roll Number</span>
+                        <span class="font-mono font-medium text-slate-700 text-lg">IC-2K23-57</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase">Course</span>
+                        <span class="font-semibold text-slate-800">Integrated BCA-MCA </span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase">Current Status</span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            5th Semester • Section B
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills Section (Added Seaborn & Matplotlib) -->
+            <div class="mb-8">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 pl-1">Technical Skills</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Python
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        NumPy
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Pandas
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Matplotlib
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Seaborn
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Scikit-Learn
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        Django
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                        SQL
+                    </span>
+                </div>
+            </div>
+
+            <!-- Assignment Submission Context -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="h-8 w-1 bg-blue-600 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-slate-800">Portfolio Content</h2>
+                </div>
+                
+                <p class="text-slate-600 leading-relaxed">
+                    This portfolio page is submitted as part of the <strong>5th Semester Data Science Practical</strong>. It serves as a central hub for the practical assignments, assignments, and professional milestones.
+                </p>
+
+                <!-- Project Links Section -->
+                <div class="mt-6 grid gap-4 md:grid-cols-2">
+                    <!-- Assignments Page Link -->
+                    <a href="assignments.html" class="group block p-5 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all bg-white relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Assignments</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Submission</span>
+                        </div>
+                        <p class="text-sm text-slate-500 pr-4">Access all the video assignment soultions for internals and assignment questions of the 5th semester.</p>
+                    </a>
+
+                    <!-- Certifications & Achievements Link -->
+                    <a href="achievements.html" class="group block p-5 rounded-xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition-all bg-white relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <svg class="w-16 h-16 text-amber-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-amber-600 transition-colors">Certifications & Achievements</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Honors</span>
+                        </div>
+                        <p class="text-sm text-slate-500 pr-4">View professional certificates and academic recognitions.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Footer with Date -->
+            <div class="mt-10 pt-6 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; <span id="year"></span> Student Portfolio.</p>
+                <p>Generated: <span id="current-date" class="font-mono text-slate-500"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- System Logic ---
+        const now = new Date();
+        document.getElementById('year').textContent = now.getFullYear();
+        document.getElementById('current-date').textContent = now.toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric'
+        });
+
+        // Console welcome message for the professor who might inspect element
+        console.log("%c Hello! ", "background: #222; color: #bada55; font-size: 20px");
+        console.log("This portfolio is generated as part of the 5th Sem Practical Assignment.");
+    </script>
+</body>
+</html>
