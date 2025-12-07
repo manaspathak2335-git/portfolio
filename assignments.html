@@ -116,7 +116,7 @@
         </section>
 
         <!-- Practical Assignment -->
-        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div class="p-6 border-b border-slate-100 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleSection('practical-content', 'practical-chevron')">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
@@ -141,6 +141,38 @@
                         </tr>
                     </thead>
                     <tbody id="practical-body" class="divide-y divide-slate-100 search-target">
+                        <!-- Content populated by JS at bottom -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- End Semester Solutions (NEW SECTION) -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
+            <div class="p-6 border-b border-slate-100 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors" onclick="toggleSection('endsem-content', 'endsem-chevron')">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg id="endsem-chevron" class="w-5 h-5 text-slate-400 transition-transform duration-300 chevron-rotate" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-800">End Semester Solutions</h2>
+                            <p class="text-sm text-slate-500 mt-1">Video solutions for 9 End Semester questions.</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-semibold rounded-full">9 Videos</span>
+                </div>
+            </div>
+            
+            <div id="endsem-content" class="overflow-x-auto custom-scrollbar content-visible">
+                <table class="w-full text-sm text-left text-slate-600">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 w-24">Q. No</th>
+                            <th class="px-6 py-3">Topic / Description</th>
+                            <th class="px-6 py-3 w-32">Status</th>
+                            <th class="px-6 py-3 w-32 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="endsem-body" class="divide-y divide-slate-100 search-target">
                         <!-- Content populated by JS at bottom -->
                     </tbody>
                 </table>
@@ -204,6 +236,23 @@
             { q: "Q10", topic: "K-Nearest Neighbors",     link: "https://youtu.be/tpuqSpaRuiU?si=pfjkmWnO0SHMZJ7b" }
         ];
 
+        // ---------------------------------------------------------
+        // 4. END SEMESTER SOLUTIONS DATA (9 Questions)
+        // ---------------------------------------------------------
+        // To update a link, simply change the 'link' property for that specific question below.
+        
+        const endsem_data = [
+            { q: "Q1", topic: "CRISP-DM and Different Types of Data", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q2", topic: "Naive Bayes Algorithm and Probablity Distributions", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q3", topic: "Data Wrangling, Problems in Data Cleaning and Data Imputation", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q4", topic: "Statistical Measures and Feature Engineering Techniques", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q5", topic: "Machine Learning Concepts", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q6", topic: "Data Imputation techniques and Logistic Regression", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q7", topic: "Clustering and K-Nearest Neighbors", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q8", topic: "Decision Making and Neural Networks", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" },
+            { q: "Q9", topic: "Gini Index", link: "https://youtube.com/playlist?list=PL2ZVQVN6CnETVOgzoJF2iTZpX_J2Q2yTm&si=gCp66oCjp2ngYnxq" }
+        ];
+
         // ==========================================
         //      RENDERING LOGIC (DO NOT EDIT)
         // ==========================================
@@ -235,6 +284,7 @@
             renderTable(internal1_data, 'internal1-body');
             renderTable(internal2_data, 'internal2-body');
             renderTable(practical_data, 'practical-body');
+            renderTable(endsem_data, 'endsem-body');
         });
 
         // Toggle Accordion
@@ -289,6 +339,7 @@
 </body>
 
 </html>
+
 
 
 
